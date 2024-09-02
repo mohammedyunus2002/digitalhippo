@@ -3,8 +3,8 @@ import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { slateEditor } from '@payloadcms/richtext-slate'
 import path from 'path'
-import dotenv from 'dotenv'
 import { Users } from './collections/Users'
+import dotenv from 'dotenv'
 import { Products } from './collections/Products/Products'
 import { Media } from './collections/Media'
 import { ProductFiles } from './collections/ProductFile'
@@ -24,7 +24,7 @@ export default buildConfig({
     user: 'users',
     bundler: webpackBundler(),
     meta: {
-      titleSuffix: '- DigitalMarket',
+      titleSuffix: '- DigitalHippo',
       favicon: '/favicon.ico',
       ogImage: '/thumbnail.jpg',
     },
