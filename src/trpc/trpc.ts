@@ -1,27 +1,3 @@
-import { User } from '@/payload-types'
-import { ExpressContext } from '@/server'
-import { TRPCError, initTRPC } from '@trpc/server'
-import { PayloadRequest } from 'payload/types'
-
-const t = initTRPC.context<ExpressContext>().create()
-const middleware = t.middleware
-
-const isAuth = middleware(async ({ ctx, next }) => {
-  const req = ctx.req as PayloadRequest
-
-  const { user } = req as { user: User | null }
-
-  if (!user || !user.id) {
-    throw new TRPCError({ code: 'UNAUTHORIZED' })
-  }
-
-  return next({
-    ctx: {
-      user,
-    },
-  })
-})
-
-export const router = t.router
-export const publicProcedure = t.procedure
-export const privateProcedure = t.procedure.use(isAuth)
+version https://git-lfs.github.com/spec/v1
+oid sha256:14975cb43389417c7c4417a11ec79fed22b60bd8ce074324cadb599fe2d3255e
+size 677

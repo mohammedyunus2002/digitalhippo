@@ -1,10 +1,3 @@
-import next from "next"
-
-const PORT = Number(process.env.PORT) || 3000
-
-export const nextApp = next({
-    dev: process.env.NODE_ENV !== "production",
-    port: PORT
-})
-
-export const nextHandler = nextApp.getRequestHandler()
+version https://git-lfs.github.com/spec/v1
+oid sha256:d831408dbbe5447189ab6501af04ca64a3a7b06244461b0c263606bc2d5faccd
+size 224

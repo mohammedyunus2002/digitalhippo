@@ -1,18 +1,3 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { getServerSideUser } from './lib/payload-utils'
-
-export async function middleware(req: NextRequest) {
-  const { nextUrl, cookies } = req
-  const { user } = await getServerSideUser(cookies)
-
-  if (
-    user &&
-    ['/sign-in', '/sign-up'].includes(nextUrl.pathname)
-  ) {
-    return NextResponse.redirect(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/`
-    )
-  }
-
-  return NextResponse.next()
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:9005ddc3b197e4684c77a63be5ffb6569ff55f40e70017d8f469b1b78dc61769
+size 458

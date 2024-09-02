@@ -1,24 +1,3 @@
-import { User } from '../payload-types'
-import { ReadonlyRequestCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies'
-import { NextRequest } from 'next/server'
-
-export const getServerSideUser = async (
-  cookies: NextRequest['cookies'] | ReadonlyRequestCookies
-) => {
-  const token = cookies.get('payload-token')?.value
-
-  const meRes = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/me`,
-    {
-      headers: {
-        Authorization: `JWT ${token}`,
-      },
-    }
-  )
-
-  const { user } = (await meRes.json()) as {
-    user: User | null
-  }
-
-  return { user }
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b5347b21f168fb3f0a667f47e991e8a45234df48cf960ef45ff3556f878b8082
+size 606
