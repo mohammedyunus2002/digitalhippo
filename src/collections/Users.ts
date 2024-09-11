@@ -4,8 +4,8 @@ export const Users: CollectionConfig = {
     slug: "users",
     auth: {
         verify: {
-            generateEmailHTML: ({token}) => {
-                return `<p>hello pls verify</p>`
+            generateEmailHTML: ({ token }) => {
+                return `<a href='${process.env.NEXT_PUBLIC_SERVER_URL}/verify-email?token=${token}'>Verify account</a>`
             }
         }
     },
