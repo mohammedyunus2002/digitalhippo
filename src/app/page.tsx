@@ -1,4 +1,5 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import ProductReel from "@/components/ProductReel";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   ArrowDownToLine,
@@ -56,6 +57,8 @@ export default function Home() {
             </Button>
           </div>
         </div>
+
+        <ProductReel href="/products" title="Brand new" query={{sort: "desc", limit: 4}} />
     </MaxWidthWrapper>
 
     <section className='border-t border-gray-200 bg-gray-50'>
