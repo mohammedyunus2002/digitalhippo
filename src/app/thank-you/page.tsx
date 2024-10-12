@@ -63,6 +63,7 @@ const ThankYouPage = async ({
           src='/checkout-thank-you.jpg'
           className='h-full w-full object-cover object-center'
           alt='thank you for your order'
+          objectFit='cover'
         />
       </div>
 
