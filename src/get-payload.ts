@@ -25,7 +25,7 @@ if (!cached) {
     client: null,
     promise: null,
   }
-}
+} 
 
 interface Args {
   initOptions?: Partial<InitOptions>
@@ -46,7 +46,7 @@ export const getPayloadClient = async ({
     cached.promise = payload.init({
       email: {
         transport: transporter,
-        fromAddress: 'hello@joshtriedcoding.com',
+        fromAddress: 'Acme <onboarding@resend.dev>',
         fromName: 'DigitalHippo',
       },
       secret: process.env.PAYLOAD_SECRET,
